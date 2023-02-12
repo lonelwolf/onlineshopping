@@ -2,7 +2,7 @@ import { RiContrast2Line, RiFacebookCircleLine, RiFolder2Line, RiMailLine, RiWeb
 
 const Footer = () => {
     return(
-        <div className="absolute bottom-0 flex flex-col text-gray-100 bg-zinc-600 w-full">
+        <div className="hidden absolute bottom-0 md:flex flex-col text-gray-100 bg-zinc-600 w-full">
             <div className="flex flex-row justify-around p-3">
                 <div className="flex flex-col items-center text-xl">
                     <RiContrast2Line/>

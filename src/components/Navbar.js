@@ -38,7 +38,7 @@ const Navbar = () =>  {
 
 
     return(
-        <div className="fixed top-0 flex flex-row justify-evenly shadow-md border-b border-gray-200 dark:border-orange-300 bg-slate-50 dark:bg-zinc-800 py-3 w-full">
+        <div className="md:flex fixed top-0 hidden flex-row justify-evenly shadow-md border-b border-gray-200 dark:border-orange-300 bg-slate-50 dark:bg-zinc-800 py-3 w-full">
             <div>
             <img src={logo} className="animate-bounce w-12" alt="" />
             </div>
