@@ -1,6 +1,7 @@
-import logo from '../logo.svg';
+
 import { RiGithubFill, RiMoonFill, RiSunLine, RiTranslate } from 'react-icons/ri';
 import { useEffect, useState } from 'react';
+import NavShearsh from './NavShearch';
 
 
 const Navbar = () =>  {
@@ -38,10 +39,10 @@ const Navbar = () =>  {
 
 
     return(
-        <div className="md:flex fixed top-0 hidden flex-row justify-evenly shadow-md border-b border-gray-200 dark:border-orange-300 bg-slate-50 dark:bg-zinc-800 py-3 w-full">
-            <div>
-            <img src={logo} className="animate-bounce w-12" alt="" />
-            </div>
+        <>
+        <NavShearsh/>
+        <div className="md:flex hidden flex-row justify-evenly shadow-md border-b border-gray-200 dark:border-orange-300 bg-slate-50 dark:bg-slate-700 py-3 w-full">
+           
             <div className="flex flex-row items-center space-x-3 text-zinc-400 dark:text-orange-400">
                 <section id="proyectos">Proyectos</section>
                 <section id="estudios">Estudios</section>
@@ -72,6 +73,7 @@ const Navbar = () =>  {
 
                     
         </div>
+        </>
 
     )
 }

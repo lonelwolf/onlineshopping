@@ -7,6 +7,7 @@ const initialForm = {
   name: "",
   email: "",
   subject: "",
+  test:"",
   comments: "",
 };
 
@@ -15,6 +16,7 @@ const validationsForm = (form) => {
   let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
   let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
   let regexComments = /^.{1,255}$/;
+  let regexNumber = /^([0-9])*$/;
 
   if (!form.name.trim()) {
     errors.name = "El campo 'Nombre' es requerido";
@@ -32,6 +34,12 @@ const validationsForm = (form) => {
     errors.subject = "El campo 'Asunto a tratar' es requerido";
   }
 
+  if (!form.telf.trim()) {
+    errors.telf = "El campo 'Telefono' es requerido";
+  }else if (!regexNumber.test(form.telf.trim())){
+    errors.telf = "En este campo solo se admiten números"
+  }
+
   if (!form.comments.trim()) {
     errors.comments = "El campo 'Comentarios' es requerido";
   } else if (!regexComments.test(form.comments.trim())) {
@@ -40,11 +48,6 @@ const validationsForm = (form) => {
   }
 
   return errors;
-};
-
-let styles = {
-  fontWeight: "bold",
-  color: "#dc3545",
 };
 
 const ContactForm = () => {
@@ -102,6 +105,19 @@ const ContactForm = () => {
             onBlur={handleBlur}
             onChange={handleChange}
             value={form.subject}
+            required
+            className="border rounded-md pl-3 border-violet-400 placeholder:italic placeholder:text-slate-400 w-full"
+          />
+          {errors.telf && <p className="bg-pink-200 rounded-sm px-4 italic text-sm opacity-80 ">{errors.telf}</p>}
+          *
+          <input
+            type="text"
+            name="telf"
+            pattern="[0-9]*"
+            placeholder="Telefono"
+            onBlur={handleBlur}
+            onChange={handleChange}
+            value={form.telf}
             required
             className="border rounded-md pl-3 border-violet-400 placeholder:italic placeholder:text-slate-400 w-full"
           />
